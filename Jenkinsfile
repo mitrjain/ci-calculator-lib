@@ -10,14 +10,14 @@ pipeline{
     
     stage('build-image'){
       steps{
-        sh 'docker build -t calculator-env:latest .'
+        sh 'docker build -t mitrjain1996/calculator-env:latest .'
       }
     }
 
     stage('publish'){
       steps{
         sh 'docker login -u ${env.DOKCER_CREDS_USR}E -p ${env.DOKCER_CREDS_PSW}'
-        sh 'docker push calculator-env:latest'
+        sh 'docker push mitrjain1996/calculator-env:latest'
       }
     }
     
